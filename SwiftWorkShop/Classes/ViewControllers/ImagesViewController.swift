@@ -30,3 +30,12 @@ extension ImagesViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+extension ImagesViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemsCountPerRow: CGFloat = 3
+        let widthPerItem = view.frame.width / itemsCountPerRow
+
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+}
